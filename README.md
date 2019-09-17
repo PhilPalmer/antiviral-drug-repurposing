@@ -1,13 +1,9 @@
-# The search for a broad spectrum antiviral: 
-## Broad spectrum antiviral drug discovery/repurposing
+# WORK IN PROGRES: The search for a broad spectrum antiviral: 
+## Using differential gene expression analysis & drug repurposing techniques to find compounds with similiar gene expression profiles to the HSP90 inhibitor Geldanamycin
 
-Side project / proof of concept done as part of my PhD application(s)
+This side project was done for a PhD application research proposal as a proof of concept 
 
 ## Motivation / the problem
-- Long-term future / existential risk
-- Biosecurity
-  - Spanish flu
-  - Enginered pathogens ~more dangerous
 - Broad-spectrum antivirals
   - Antibiotics
   - Viruses are ~more dangerous than bacteria
@@ -17,6 +13,10 @@ Side project / proof of concept done as part of my PhD application(s)
 - HSP90
   - ~Neglected because less useful for developing countries without rapid healthcare/drug access
   - ~Buy time for vaccine development
+- Biosecurity
+  - Spanish flu
+  - Enginered pathogens ~more dangerous
+  - Long-term future / existential risk
 - Drug repurposing
     - To combat the biggest challenge of developing HSP90 inhibitors as antivirals, their toxicity (Wang et al., 2017)
     - Weak mechanism of action?
@@ -41,26 +41,26 @@ The data came from eight patients and contained airway epithelia cells treated w
 
 For full execution details [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
 
-![deploit_jobs_page]()
+![deploit_jobs_page](images/deploit_jobs_page.png)
 
 ### 2) Run RNASeq analysis to generate feature counts
 The download reads were then analysed using the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline, which is developed by the open source bioinformatics community. This including adapter trimming using [TrimGalore](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#trimgalore), alignment to the GRCh37 reference genome using [STAR](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#star) and gene counts using [FeatureCounts](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#featurecounts).
 
-For full execution details & Multiqc report [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
+For full execution details & [Multiqc report](reports/multiqc_report.html) [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
 
-![multiqc_report]()
+![multiqc_report](images/multiqc_report.png)
 
 ### 3) Run differential gene expression analysis
 The merged gene counts were then used to generate a [list of differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) with [lifebit-ai/dean](https://github.com/lifebit-ai/dean) pipeline and DESeq2. This [experiment file](data/3_differential_gene_expression/experiment.csv) was also used as input data to assign each of reads the relevant experimental group.
 
-For full execution details & R Markdown report [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
+For full execution details & [R Markdown report](reports/DE_with_DEseq2.html) [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
 
-![rmarkdown_report]()
+![rmarkdown_report](images/rmarkdown_report.png)
 
 ### 4) Drug repurposing: find compounds with similiar gene expression profiles
-From the list of [differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) an [RScript](data/4_drug_repurposing/get_top_genes.R) was used to extract the top [under](data/4_drug_repurposing/under_expressed.txt) and [over](data/4_drug_repurposing/over_expressed.txt) expressed genes. This data was then uploaded to [clue.io](https://clue.io/) to find [compounds](data/4_drug_repurposing/ranked_compounds.txt) with similiar gene expression profiles
+From the list of [differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) a [R Script](data/4_drug_repurposing/get_top_genes.R) was used to extract the top [under](data/4_drug_repurposing/under_expressed.txt) and [over](data/4_drug_repurposing/over_expressed.txt) expressed genes based on adjusted p-value. This data was then uploaded to [clue.io](https://clue.io/) to find [compounds](data/4_drug_repurposing/ranked_compounds.txt) with similiar gene expression profiles.
 
-### 5) Data visualisation: display the data in an appealing way to aid exploration of the results
+### 5) Data visualisation: display the results in an appealing way to aid data exploration
 
 TBD
 
@@ -70,6 +70,8 @@ Please note this was done over the course of a few days and so there is lots mor
 - HDAC inhibitors could ~be used as a broad spectrum antiviral. Already shown antiviral activity & currently four approved (anti-cancer) drugs
 
 ## Discussion
+- As it seemed like the treatment with Geldanamycin wasn't able to distinguish between the samples the gene expression profile may be for a co-variate instead (see sample distance matrix & pca biplot)
+- HDAC inhibitors also inhibit HSP90 proteins? https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5474223/
 Further research:
 - more backgroound reading about HSP90i's
 - more investigation of pathways/MoA
@@ -78,3 +80,5 @@ Further research:
 
 ## References
 - Only 2% drugs can be repurposed https://insight.jbs.cam.ac.uk/2018/limits-of-drug-repurposing/
+- Open phil R&D reduce risk of viral pathogens https://www.openphilanthropy.org/research/cause-reports/research-and-development-decrease-biosecurity-risks-viral-pathogens
+- Open phil https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5576214/
