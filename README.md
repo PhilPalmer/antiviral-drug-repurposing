@@ -27,30 +27,32 @@ The aim of this project was to find compounds with similiar gene expression prof
 Scripts were written in [Nextflow](https://www.nextflow.io/) which is a workflow manager allowing highly scalable and parralelised analysis. [Docker](https://www.docker.com/) containers were used to bundle software dependencies for reproducibility. The first three steps were run on [Lifebit's Deploit](https://lifebit.ai/deploit) platform which allows versioning and sharing of the analysis.
 
 ### 1) Download the data
-A [data-donwloader](https://github.com/PhilPalmer/data-downloader) pipeline was written & executed to download bulk RNASeq data from EMBL-EBI.
+A [data-donwloader](https://github.com/PhilPalmer/data-downloader) pipeline was written & executed to download publicly available bulk RNASeq data from EMBL-EBI.
 In total [96 FastQ files](data/1_download/urls.txt) (94 GB) of raw gzipped paired-end data from the study [PRJNA480665]( https://www.ncbi.nlm.nih.gov/bioproject/PRJNA480665) were used.
 The data came from eight patients and contained airway epithelia cells treated with and without the HSP90 inhibitor Geldanamycin.
 
 For full execution details [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
 
-![deploit_jobs_page](images/deploit_jobs_page.png)
+[![deploit_jobs_page](images/deploit_jobs_page.png)](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
 
 ### 2) Run RNASeq analysis to generate feature counts
-The download reads were then analysed using the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline, which is developed by the open source bioinformatics community. This including adapter trimming using [TrimGalore](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#trimgalore), alignment to the GRCh37 reference genome using [STAR](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#star) and gene counts using [FeatureCounts](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#featurecounts).
+The download reads were then analysed using the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline, which is developed by the open source bioinformatics community. The reads were first trimmed using [TrimGalore](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#trimgalore) to remove adapter sequences/contamination from the sequencing and to remove low quality regions. The reads could then be aligned to the GRCh37 reference genome using [STAR](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#star). After the alignment it was then possible to determine the gene counts using [FeatureCounts](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#featurecounts) and merge this data for all of the samples.
 
 For full execution details & [Multiqc report](reports/multiqc_report.html) [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
 
-![multiqc_report](images/multiqc_report.png)
+[![multiqc_report](images/multiqc_report.png)](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
 
 ### 3) Run differential gene expression analysis
-The merged gene counts were then used to generate a [list of differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) with [lifebit-ai/dean](https://github.com/lifebit-ai/dean) pipeline and DESeq2. This [experiment file](data/3_differential_gene_expression/experiment.csv) was also used as input data to assign each of reads the relevant experimental group.
+The merged gene counts were then used to generate a list of [differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) with [lifebit-ai/dean](https://github.com/lifebit-ai/dean) pipeline and DESeq2. This [experiment file](data/3_differential_gene_expression/experiment.csv) was also used as input data to assign each of reads the relevant experimental group.
 
-For full execution details & [R Markdown report](reports/DE_with_DEseq2.html) [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
+For full execution details & [R Markdown report](reports/DE_with_DEseq2.html) & [Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
 
-![rmarkdown_report](images/rmarkdown_report.png)
+[![rmarkdown_report](images/rmarkdown_report.png)](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
 
 ### 4) Drug repurposing: find compounds with similiar gene expression profiles
-From the list of [differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) a [R Script](data/4_drug_repurposing/get_top_genes.R) was used to extract the top [under](data/4_drug_repurposing/under_expressed.txt) and [over](data/4_drug_repurposing/over_expressed.txt) expressed genes based on adjusted p-value. This data was then uploaded to [clue.io](https://clue.io/) to find [compounds](data/4_drug_repurposing/ranked_compounds.txt) with similiar gene expression profiles.
+From the list of [differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) a [R Script](data/4_drug_repurposing/get_top_genes.R) was used to extract the top [under](data/4_drug_repurposing/under_expressed.txt) and [over](data/4_drug_repurposing/over_expressed.txt) expressed genes based on the adjusted p-value. This data was then uploaded to the [Connectivity Map](https://clue.io/) to find [compounds](data/4_drug_repurposing/ranked_compounds.txt) with similiar gene expression profiles.
+
+[![connectivity_map](images/connectivity_map.png)](https://clue.io/query)
 
 ### 5) Data visualisation: display the results in an appealing way to aid data exploration
 
