@@ -15,9 +15,6 @@ While broad-spectrum antibiotics are one of the greatest inventions of all times
 ### HSP90 Inhibitors
 One such candidate for a broad spectrum antiviral are HSP90 inhibitors (HSP90is), some of which are in clinical trials as an anti-cancer drug. HSP90is are a class of molecules which inhibit heat shock proteins. Heat shock proteins are chaperone proteins which play an important role in the synthesis and folding of proteins in humans. It is these mechanisms which are often hijacked by a wide variety of viruses and used to make viral proteins. Therefore, by inhibiting these proteins with HSP90is it is possible to prevent viruses from replicating. While they may not be suitable as a long-term treatment due to their side effects/toxicity they may proivde an effective countermeasure in a pandemic by buying more time for vaccine development.
 
-### Biosecurity
-It seems clear that biosecurity is a particularly important to have countermeasures against a pandemic as shown by the 1918 Spanish flu which killed more people than World War I. This is even more true today becuase of advances in synthetic biology which may result in more dangerous engineered pathogens and a pandemic being vastly worse. If this was the case then this could cause negative repercussions not only for current generations and also pose an existential risk for humanity and future generations.
-
 ### Drug repurposing
 One of the biggest challenges of developing HSP90is as a broad spectrum antiviral is their toxicity (Wang et al., 2017). Therefore, by using drug repurposing methods it may be possible to find other compounds which posses the same antiviral activity as HSP90is, however, are already approved drugs and are therefore likely to be much safer. In general, repurposed drugs are approved sooner (3-12 years), at a redeuced cost (50-60%) and are more likely to be approved (Hernandez et al., 2017).
 
