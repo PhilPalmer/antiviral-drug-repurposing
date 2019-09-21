@@ -31,21 +31,21 @@ A [data-donwloader](https://github.com/PhilPalmer/data-downloader) pipeline was 
 In total [96 FastQ files](data/1_download/urls.txt) (94 GB) of raw gzipped paired-end data from the study [PRJNA480665]( https://www.ncbi.nlm.nih.gov/bioproject/PRJNA480665) were used.
 The data came from eight patients and contained airway epithelia cells treated with and without the HSP90 inhibitor Geldanamycin.
 
-For full execution details [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
+For full execution details see [Deploit job](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
 
 [![deploit_jobs_page](images/deploit_jobs_page.png)](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
 
 ### 2) Run RNASeq analysis to generate feature counts
 The download reads were then analysed using the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline, which is developed by the open source bioinformatics community. The reads were first trimmed using [TrimGalore](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#trimgalore) to remove adapter sequences/contamination from the sequencing and to remove low quality regions. The reads could then be aligned to the GRCh37 reference genome using [STAR](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#star). After the alignment it was then possible to determine the gene counts using [FeatureCounts](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#featurecounts) and merge this data for all of the samples.
 
-For full execution details & [Multiqc report](reports/multiqc_report.html) [see Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
+For full execution details & [Multiqc report](reports/multiqc_report.html) see [Deploit job](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
 
 [![multiqc_report](images/multiqc_report.png)](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
 
 ### 3) Run differential gene expression analysis
-The merged gene counts were then used to generate a list of [differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) with [lifebit-ai/dean](https://github.com/lifebit-ai/dean) pipeline and DESeq2. This [experiment file](data/3_differential_gene_expression/experiment.csv) was also used as input data to assign each of reads the relevant experimental group.
+The [merged gene counts](data/2_rnaseq/merged_gene_counts.txt) were then used to generate a list of [differenitally expressed genes](data/3_differential_gene_expression/diffexpr-results.csv) with [lifebit-ai/dean](https://github.com/lifebit-ai/dean) pipeline and DESeq2. This [experiment file](data/3_differential_gene_expression/experiment.csv) was also used as input data to assign each of reads the relevant experimental group.
 
-For full execution details & [R Markdown report](reports/DE_with_DEseq2.html) & [Deploit job link](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
+For full execution details & [R Markdown report](reports/DE_with_DEseq2.html) see [Deploit job](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
 
 [![rmarkdown_report](images/rmarkdown_report.png)](https://deploit.lifebit.ai/public/jobs/5d7e510d1b814e00d7d1a155)
 
