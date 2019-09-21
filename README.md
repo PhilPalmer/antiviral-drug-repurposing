@@ -5,26 +5,21 @@
 
 Finding a broad spectrum antiviral compound could greatly help in combating viral diseases, drug resistance and pandemics. One candidate for broad spectrum antivirals are HSP90 inhibitors such as Geldanamycin, however, there may be compounds with similar antiviral properties that may be a better candidate. Antiviral drug discovery seems to be a particularly neglected area of research perhaps because broad spectrum antivirals may be less useful in developing countries which do not have rapid healthcare/drug access. In this project, bioinformatics methods in gene expression, drug discovery and repurposing were used to find compounds with similar gene expression profiles, and therefore potentially antiviral activity, to the HSP90 inhibitor Geldanamycin. While very preliminary, the results were promising because numerous compounds where found to have similar gene expression profiles, such as FDA approved HDAC inhibitors, which may provide a faster time to market helping to save thousands of lives.
 
-## Motivation / the problem
-- Broad-spectrum antivirals
-  - Antibiotics
-  - Viruses are ~more dangerous than bacteria
-    - More transmissible
-    - More difficult to disinfect
-  - Useful as a countermeasure/therapeutic regardless of the pathogen
-- HSP90
-  - ~Neglected because less useful for developing countries without rapid healthcare/drug access
-  - ~Buy time for vaccine development
-- Biosecurity
-  - Spanish flu
-  - Enginered pathogens ~more dangerous
-  - Long-term future / existential risk
-- Drug repurposing
-    - To combat the biggest challenge of developing HSP90 inhibitors as antivirals, their toxicity (Wang et al., 2017)
-    - Weak mechanism of action?
-- Unlikely to be information hazard
+## Introduction
 
-## Background / Introduction
+Overall it was deemed that this project was unlikely to be an information hazard and so has been made publically available.
+
+### Broad-spectrum antivirals
+While broad-spectrum antibiotics are one of the greatest inventions of all times due to their ability to treat a wide array of bacteria, they are ineffective against viruses. Due to viruses being more difficult to disinfect, for this reason, as well as them mutating more rapidly and being more transmissible it's likely the viruses pose a greater risk of pandemic than bacteria. Therefore, a broad spectrum antiviral would be a useful therapeutic and countermeasure to safeguard from this. Especially because a broad spectrum antiviral would be able to administered rapidly regardless of the viral pathogen responsible for the disease/pandemic.
+
+### HSP90 Inhibitors
+One such candidate for a broad spectrum antiviral are HSP90 inhibitors (HSP90is), some of which are in clinical trials as an anti-cancer drug. HSP90is are a class of molecules which inhibit heat shock proteins. Heat shock proteins are chaperone proteins which play an important role in the synthesis and folding of proteins in humans. It is these mechanisms which are often hijacked by a wide variety of viruses and used to make viral proteins. Therefore, by inhibiting these proteins with HSP90is it is possible to prevent viruses from replicating. While they may not be suitable as a long-term treatment due to their side effects/toxicity they may proivde an effective countermeasure in a pandemic by buying more time for vaccine development.
+
+### Biosecurity
+It seems clear that biosecurity is a particularly important to have countermeasures against a pandemic as shown by the 1918 Spanish flu which killed more people than World War I. This is even more true today becuase of advances in synthetic biology which may result in more dangerous engineered pathogens and a pandemic being vastly worse. If this was the case then this could cause negative repercussions not only for current generations and also pose an existential risk for humanity and future generations.
+
+### Drug repurposing
+One of the biggest challenges of developing HSP90is as a broad spectrum antiviral is their toxicity (Wang et al., 2017). Therefore, by using drug repurposing methods it may be possible to find other compounds which posses the same antiviral activity as HSP90is, however, are already approved drugs and are therefore likely to be much safer. In general, repurposed drugs are approved sooner (3-12 years), at a redeuced cost (50-60%) abd are more likely to be approved (Hernandez et al., 2017).
 
 
 ## Aims
