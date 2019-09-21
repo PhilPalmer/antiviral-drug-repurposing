@@ -19,13 +19,11 @@ One such candidate for a broad spectrum antiviral are HSP90 inhibitors (HSP90is)
 It seems clear that biosecurity is a particularly important to have countermeasures against a pandemic as shown by the 1918 Spanish flu which killed more people than World War I. This is even more true today becuase of advances in synthetic biology which may result in more dangerous engineered pathogens and a pandemic being vastly worse. If this was the case then this could cause negative repercussions not only for current generations and also pose an existential risk for humanity and future generations.
 
 ### Drug repurposing
-One of the biggest challenges of developing HSP90is as a broad spectrum antiviral is their toxicity (Wang et al., 2017). Therefore, by using drug repurposing methods it may be possible to find other compounds which posses the same antiviral activity as HSP90is, however, are already approved drugs and are therefore likely to be much safer. In general, repurposed drugs are approved sooner (3-12 years), at a redeuced cost (50-60%) abd are more likely to be approved (Hernandez et al., 2017).
+One of the biggest challenges of developing HSP90is as a broad spectrum antiviral is their toxicity (Wang et al., 2017). Therefore, by using drug repurposing methods it may be possible to find other compounds which posses the same antiviral activity as HSP90is, however, are already approved drugs and are therefore likely to be much safer. In general, repurposed drugs are approved sooner (3-12 years), at a redeuced cost (50-60%) and are more likely to be approved (Hernandez et al., 2017).
 
 
 ## Aims
-The aim was to find known compounds with similiar gene expression profiles to the HSP90 inhibitor Geldanamycin.
-- New classification of known compounds as HSP90 inhibitors
-- Find approved drugs with the same gene expression profile & therefore activity as HSP90i's
+The aim of this project was to find compounds with similiar gene expression profiles to the HSP90 inhibitor Geldanamycin, especially compounds which are already approved. This is becasue such compounds may have similiar antiviral activity as HSP90is while having lower toxicity and greater chance of approval.
 
 ## Methods
 
