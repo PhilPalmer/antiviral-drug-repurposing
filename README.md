@@ -61,7 +61,17 @@ TBD
 Please note this was done over the course of a few days and so there is lots more that I would like to do.
 
 ## Results
-- HDAC inhibitors could ~be used as a broad spectrum antiviral. Already shown antiviral activity & currently four approved (anti-cancer) drugs
+
+In total six compounds were found with a similairty score over 95, two of these compounds were HDAC inhibitors
+
+| Score | ID            | Name              | Description                       |
+| ----- | ------------- | ----------------- | --------------------------------- |
+| 97.78 | BRD-K02130563 | panobinostat      | HDAC inhibitor                    |
+| 97.36 | BRD-U82589721 | HG-5-113-01       | Protein kinase inhibitor          |
+| 96.84 | BRD-K25504083 | cytochalasin-d    | Actin polymerization inhibitor    |
+| 96.32 | BRD-K52313696 | tacedinaline      | HDAC inhibitor                    |
+| 95.7  | BRD-K68488863 | ENMD-2076         | FLT3 inhibitor                    |
+| 95.17 | BRD-K47983010 | BX-795            | IKK inhibitor                     |
 
 ## Discussion
 - As it seemed like the treatment with Geldanamycin wasn't able to distinguish between the samples the gene expression profile may be for a co-variate instead (see sample distance matrix & pca biplot)
