@@ -56,22 +56,32 @@ From the list of [differenitally expressed genes](data/3_differential_gene_expre
 
 ### 5) Data visualisation: display the results in an appealing way to aid data exploration
 
-A [R Shiny web app](https://philpalmer.shinyapps.io/antiviral_drug_repurposing/) was built to visualise the drug repurposing results. This allowed the identification of mechanism of actions, associated conditions, targets and pathways that were common across multiple compounds which have similiar gene expression profiles. Data across [all](data/5_data_viz/summary.txt) cell lines and the cell line [A549](data/5_data_viz/cell_line_A549.txt) were used.
+A [R Shiny web app](https://philpalmer.shinyapps.io/antiviral_drug_repurposing/) was built to visualise the drug repurposing results. This allowed the identification of mechanism of actions, associated conditions, targets and pathways that were common across multiple compounds which have similiar gene expression profiles. Data across [all](data/5_data_viz/summary.txt) cell lines and the cell line [A549](data/5_data_viz/cell_line_A549.txt) were used. Cell line A549 was chosen because the samples were from airway epithelia cells which may have a more similiar gene expression profile to alveolar basal epithelial cells compared to other cell types.
 
 [![rshiny_app](images/rshiny_app.png)](https://philpalmer.shinyapps.io/antiviral_drug_repurposing/)
 
 ## Results
 
+By plotting the data from the RNASeq [edgeR sample correlation](data/2_rnaseq/edgeR_MDS_Aplot_coordinates_mqc.csv) it seemed as though the differences in gene expression between the patients were greater than those between the experimental groups of Geldanamycin treatment compared with the control. Therefore, the design formua (`∼ patient + treatment`) for the DESeq2 analysis was used to try and control for the effect of patient.
+
+![scatter_plots](images/scatter_plots.png)
+
+However, as shown by the sample distance matrix from the differential expression analysis we can see that the Geldanamycin treatment wasn't able to sufficiently distinguish from the control samples, as shown by the fact that the organge and green samples were not grouped togther in the matrix.
+
+![sample_distance_matrix](images/sample_distance_matrix.png)
+
+In total 25 compounds were found to have a similarity score over 95 for cell line A549.
+
 In total six compounds were found with a similairty score over 95, two of these compounds were HDAC inhibitors
 
-| Score | ID            | Name              | Description                       |
-| ----- | ------------- | ----------------- | --------------------------------- |
-| 97.78 | BRD-K02130563 | panobinostat      | HDAC inhibitor                    |
-| 97.36 | BRD-U82589721 | HG-5-113-01       | Protein kinase inhibitor          |
-| 96.84 | BRD-K25504083 | cytochalasin-d    | Actin polymerization inhibitor    |
-| 96.32 | BRD-K52313696 | tacedinaline      | HDAC inhibitor                    |
-| 95.7  | BRD-K68488863 | ENMD-2076         | FLT3 inhibitor                    |
-| 95.17 | BRD-K47983010 | BX-795            | IKK inhibitor                     |
+| Score | Name                              | Description                       |
+| ----- | --------------------------------- | --------------------------------- |
+| 99.98 | AG-490                            | EGFR inhibitor                    |
+| 99.83 | nor-binaltorphimine               | Opioid receptor antagonist        |
+| 99.8  | corynanthine                      | Adrenergic receptor antagonist    |
+| 99.56 | tetrahydrobiopterin               | Nitric oxide stimulant            |
+| 99.56 | 16,16-dimethylprostaglandin-e2    | Prostanoid receptor agonist       |
+| 99.53 | velnacrine                        | cholinesterase inhibitor          |
 
 ## Discussion
 - As it seemed like the treatment with Geldanamycin wasn't able to distinguish between the samples the gene expression profile may be for a co-variate instead (see sample distance matrix & pca biplot)
