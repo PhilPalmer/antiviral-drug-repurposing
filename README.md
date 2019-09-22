@@ -56,9 +56,9 @@ From the list of [differenitally expressed genes](data/3_differential_gene_expre
 
 ### 5) Data visualisation: display the results in an appealing way to aid data exploration
 
-TBD
+A [R Shiny web app](https://philpalmer.shinyapps.io/antiviral_drug_repurposing/) was built to visualise the drug repurposing results. This allowed the identification of mechanism of actions, associated conditions, targets and pathways that were common across multiple compounds which have similiar gene expression profiles. Data across [all](data/5_data_viz/summary.txt) cell lines and the cell line [A549](data/5_data_viz/cell_line_A549.txt) were used.
 
-Please note this was done over the course of a few days and so there is lots more that I would like to do.
+[![rshiny_app](images/rshiny_app.png)](https://philpalmer.shinyapps.io/antiviral_drug_repurposing/)
 
 ## Results
 
