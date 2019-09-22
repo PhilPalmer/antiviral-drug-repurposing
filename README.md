@@ -1,4 +1,4 @@
-# WORK IN PROGRES: The search for a broad spectrum antiviral: 
+# The search for a broad spectrum antiviral: 
 ## Using differential gene expression analysis & drug repurposing techniques to find compounds with similiar gene expression profiles to the HSP90 inhibitor Geldanamycin
 
 ## Abstract
@@ -72,8 +72,6 @@ A sample distance matrix was performed to calculate the distance between each of
 
 In total 25 compounds were found to have a similarity score over 95 for cell line A549.
 
-In total six compounds were found with a similairty score over 95, two of these compounds were HDAC inhibitors
-
 | Score | Name                              | Description                       |
 | ----- | --------------------------------- | --------------------------------- |
 | 99.98 | AG-490                            | EGFR inhibitor                    |
@@ -93,19 +91,6 @@ However, some limitations of the project were that the gene expression profile u
 Other limitations are that just because compounds have a similiar expression profile does not necessarily mean that they will confer similiar antiviral activity. This could be imporved upon with better experimental design. A limitation of this project was the available public data which highly restricted the number of possible experimental questions that could be asked. Instead screening could be performed whereby cells infected with viruses could be treated with the different compounds and the number of live dead cells recorded. This would be beneficial in that compounds with very different expression profiles to HSP90is which are still effective antivirals would not be discriminated against. Single cell RNA sequencing of these samples could be used and differential expression analysis performed to get higher resolution detail of the genes/pathways which are affected. *In vivo* toxicity could also be investigated as this seems to be one of the key bottlenecks for the current clinical trials for HSP90is as an anti-cancer drug (Wang et al., 2017).
 
 Another limitation is that the cell line which was used for the gene expression profile was different from that used to comapre against drugs in the Connectivity Map database. While both were from epithelial cells, this is a confounding variable and so a cell line used in the Connectivity Map database should have been used to measure the gene exression profile. Also, it may be possible to replicate and improve upon the results generating by the Connectivity Map by training and testing custom machine learning algorithms such as GANs to find compounds with similiar gene expressiom profiles.
-
-### HDAC
-- HDAC inhibitors in particular seem to have similiar gene expression profiles because two of the top four compounds were HDAC inhibitors. This may be the case because HDAC inhibitors effect HSP90 chaperons and cause the release and degradation of the HSP90 client proteins (RASGRP1 and CRAF).
-- HDAC inhibitors and HSP90 inhibitors have a shared mechanism of action
-- While approved the drug has severe side effects
-- HDAC inhibitors may decrease immune response
-- HDAC inhibitors could ~be used as a broad spectrum antiviral. Already shown antiviral activity & currently four approved (anti-cancer) drugs
-- HDAC inhibitors also inhibit HSP90 proteins? https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5474223/
-Further research:
-- more backgroound reading about HSP90i's
-- more investigation of pathways/MoA
-- validation eg single cell RNASeq analysis - in vivo?
-- more work around finding compounds with similiar gene expression profiles (ML?)
 
 ## References
 1. Somerville, C. and Youngs, H. (2018). Research and Development to Decrease Biosecurity Risks from Viral Pathogens. [online] Open Philanthropy Project. Available at: https://www.openphilanthropy.org/research/cause-reports/research-and-development-decrease-biosecurity-risks-viral-pathogens [Accessed 22 Sep. 2019].
