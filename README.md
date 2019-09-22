@@ -13,7 +13,7 @@ Overall it was deemed that this project was unlikely to be an information hazard
 While broad-spectrum antibiotics are one of the greatest inventions of all times due to their ability to treat a wide array of bacteria, they are ineffective against viruses. Due to viruses being more difficult to disinfect, for this reason, as well as them mutating more rapidly and being more transmissible it's likely the viruses pose a greater risk of pandemic than bacteria. Therefore, a broad spectrum antiviral would be a useful therapeutic and countermeasure to safeguard from this. Especially because a broad spectrum antiviral would be able to administered rapidly regardless of the viral pathogen responsible for the disease/pandemic.
 
 ### HSP90 Inhibitors
-One such candidate for a broad spectrum antiviral are HSP90 inhibitors (HSP90is), some of which are in clinical trials as an anti-cancer drug. HSP90is are a class of molecules which inhibit heat shock proteins. Heat shock proteins are chaperone proteins which play an important role in the synthesis and folding of proteins in humans. It is these mechanisms which are often hijacked by a wide variety of viruses and used to make viral proteins. Therefore, by inhibiting these proteins with HSP90is it is possible to prevent viruses from replicating. While they may not be suitable as a long-term treatment due to their side effects/toxicity they may proivde an effective countermeasure in a pandemic by buying more time for vaccine development.
+One such candidate for a broad spectrum antiviral are HSP90 inhibitors (HSP90is), some of which are in clinical trials as an anti-cancer drug. HSP90is are a class of molecules which inhibit heat shock proteins. Heat shock proteins are chaperone proteins which play an important role in the synthesis and folding of proteins in humans. It is these mechanisms which are often hijacked by a wide variety of viruses and used to make viral proteins. Therefore, by inhibiting these proteins with HSP90is it is possible to prevent viruses from replicating. While they may not be suitable as a long-term treatment due to their side effects/toxicity they may proivde an effective countermeasure in a pandemic by buying more time for the immune system to fight of the infection and for vaccine development (Somerville and Youngs, 2018).
 
 ### Drug repurposing
 One of the biggest challenges of developing HSP90is as a broad spectrum antiviral is their toxicity (Wang et al., 2017). Therefore, by using drug repurposing methods it may be possible to find other compounds which posses the same antiviral activity as HSP90is, however, are already approved drugs and are therefore likely to be much safer. In general, repurposed drugs are approved sooner (3-12 years), at a redeuced cost (50-60%) and are more likely to be approved (Hernandez et al., 2017).
@@ -29,14 +29,14 @@ Scripts were written in [Nextflow](https://www.nextflow.io/) which is a workflow
 ### 1) Download the data
 A [data-donwloader](https://github.com/PhilPalmer/data-downloader) pipeline was written & executed to download publicly available bulk RNASeq data from EMBL-EBI.
 In total [96 FastQ files](data/1_download/urls.txt) (94 GB) of raw gzipped paired-end data from the study [PRJNA480665]( https://www.ncbi.nlm.nih.gov/bioproject/PRJNA480665) were used.
-The data came from eight patients and contained airway epithelia cells treated with and without the HSP90 inhibitor Geldanamycin.
+The data came from eight patients and contained airway epithelia cells treated with and without the HSP90 inhibitor Geldanamycin (Pezzulo et al., 2019).
 
 For full execution details see [Deploit job](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
 
 [![deploit_jobs_page](images/deploit_jobs_page.png)](https://deploit.lifebit.ai/public/jobs/5d7bfd7e12638d00d8ff7c9b)
 
 ### 2) Run RNASeq analysis to generate feature counts
-The download reads were then analysed using the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline, which is developed by the open source bioinformatics community. The reads were first trimmed using [TrimGalore](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#trimgalore) to remove adapter sequences/contamination from the sequencing and to remove low quality regions. The reads could then be aligned to the GRCh37 reference genome using [STAR](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#star). After the alignment it was then possible to determine the gene counts using [FeatureCounts](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#featurecounts) and merge this data for all of the samples.
+The downloaded reads were then analysed using the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline, which is developed by the open source bioinformatics community. The reads were first trimmed using [TrimGalore](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#trimgalore) to remove adapter sequences/contamination from the sequencing and to remove low quality regions. The reads could then be aligned to the GRCh37 reference genome using [STAR](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#star). After the alignment it was then possible to determine the gene counts using [FeatureCounts](https://github.com/nf-core/rnaseq/blob/master/docs/output.md#featurecounts) and merge this data for all of the samples.
 
 For full execution details & [Multiqc report](reports/multiqc_report.html) see [Deploit job](https://deploit.lifebit.ai/public/jobs/5d7e2f041b814e00d7d17ffe)
 
@@ -66,7 +66,7 @@ By plotting the data from the RNASeq [edgeR sample correlation](data/2_rnaseq/ed
 
 ![scatter_plots](images/scatter_plots.png)
 
-However, as shown by the sample distance matrix from the differential expression analysis we can see that the Geldanamycin treatment wasn't able to sufficiently distinguish from the control samples, as shown by the fact that the organge and green samples were not grouped togther in the matrix.
+A sample distance matrix was performed to calculate the distance between each of sample using the read counts. Here the green & orange represent the conditions. Not all of the treated samples cluster together and so the Geldanamycin treatment may not be enough to seperate the samples.
 
 ![sample_distance_matrix](images/sample_distance_matrix.png)
 
