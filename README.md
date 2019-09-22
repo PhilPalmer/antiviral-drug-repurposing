@@ -108,6 +108,11 @@ Further research:
 - more work around finding compounds with similiar gene expression profiles (ML?)
 
 ## References
-- Only 2% drugs can be repurposed https://insight.jbs.cam.ac.uk/2018/limits-of-drug-repurposing/
-- Open phil R&D reduce risk of viral pathogens https://www.openphilanthropy.org/research/cause-reports/research-and-development-decrease-biosecurity-risks-viral-pathogens
-- Open phil https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5576214/
+1. Somerville, C. and Youngs, H. (2018). Research and Development to Decrease Biosecurity Risks from Viral Pathogens. [online] Open Philanthropy Project. Available at: https://www.openphilanthropy.org/research/cause-reports/research-and-development-decrease-biosecurity-risks-viral-pathogens [Accessed 22 Sep. 2019].
+2. Wang, Y., Jin, F., Wang, R., Li, F., Wu, Y., Kitazato, K. and Wang, Y. (2017). HSP90: a promising broad-spectrum antiviral drug target. Archives of Virology, 162(11), pp.3269-3282.
+3. Pezzulo, A., Tudas, R., Stewart, C., Buonfiglio, L., Lindsay, B., Taft, P., Gansemer, N. and Zabner, J. (2019). HSP90 inhibitor geldanamycin reverts IL-13– and IL-17–induced airway goblet cell metaplasia. Journal of Clinical Investigation, 129(2), pp.744-758.
+4. Hernandez, J., Pryszlak, M., Smith, L., Yanchus, C., Kurji, N., Shahani, V. and Molinski, S. (2017). Giving Drugs a Second Chance: Overcoming Regulatory and Financial Hurdles in Repurposing Approved Drugs As Cancer Therapeutics. Frontiers in Oncology, 7.
+5. Yura, Y., Kusaka, J., Tsujimoto, H., Yoshioka, Y., Yoshida, H. and Sato, M. (1997). Effects of Protein Tyrosine Kinase Inhibitors on the Replication of Herpes Simplex Virus and the Phosphorylation of Viral Proteins. Intervirology, 40(1), pp.7-14.
+6. Xu, N., Chen, Y., Liu, W., Chen, Y., Fan, Z., Liu, M. and Li, L. (2018). Inhibition of JAK2/STAT3 Signaling Pathway Suppresses Proliferation of Burkitt’s Lymphoma Raji Cells via Cell Cycle Progression, Apoptosis, and Oxidative Stress by Modulating HSP70. Medical Science Monitor, 24, pp.6255-6263.
+7. Schor, S. and Einav, S. (2018). Repurposing of Kinase Inhibitors as Broad-Spectrum Antiviral Drugs. DNA and Cell Biology, 37(2), pp.63-69.
+8. Prussia, A., Thepchatri, P., Snyder, J. and Plemper, R. (2011). Systematic Approaches towards the Development of Host-Directed Antiviral Therapeutics. International Journal of Molecular Sciences, 12(6), pp.4027-4052.
